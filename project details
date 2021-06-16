@@ -6,3 +6,13 @@ IDE Tool : VS Code
 System   : windows 10
 
 project Start Url Path  :http://127.0.0.1:8000/welcome/Subject/HomePage/
+my Admin username : Mr.Venkat
+         password : 12345
+
+step : 1 -create the project - myproject
+step : 2 -reate the app - quitzapp
+step : 3 -create the template file in my project folder
+step : 4 -create the static file in my project folder
+step : 5 -create the url file in app folder
+
+
