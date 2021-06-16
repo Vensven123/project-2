@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    
+    <meta charset="UTF-8">
+    <title>My Quitz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap">
+    <div class="Head">
+       <center>welcome...<span id="welcome"> </span> </center> 
+         <center><h2 id="heading" >  <h3>Select The Subject</h3> </center>
+</div>
+<style>
+    .Head{
+        background-color: black;
+        color: white;
+        height: 80px;
+        padding-top: 1px;
+    }
+    body{
+        background-color: cornflowerblue;
+        margin: 10px;
+    }
+    button{
+        margin-top: 10px;
+        background-color: cadetblue;
+        height: 30px;
+        width: 100px;
+        font-size: medium;
+        text-align: center;
+        
+    }
+    .inline
+    {
+        text-align: center;
+
+        }
+    label{
+        color:white;
+    } 
+    #welcome {
+        text-align: center;
+        font-size: large;
+        color: red;
+        
+    }   
+</style>
+
+</head>
+<body >
+         {% for i in subject %}
+              <div class="inline">
+              <a href=" /welcome/Subject/{{i.id}}"  ><button type="submit">{{i.subject_Type}}</button></a><br><br>
+              <label > Take Quiz Start</label>
+            </div> 
+              {% endfor %}
+
+         
+
+
+     <script>
+         document.getElementById("welcome").innerHTML=localStorage.getItem('Name')
+     </script>         
+</body>
+</html>

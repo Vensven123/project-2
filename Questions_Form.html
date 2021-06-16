@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Quitz</title>
+    <h1 align="center">Add Questions Page</h1>
+    <style>
+
+        body{
+               margin:0;
+               padding:0;
+               background-color:black;
+
+           }
+
+        .data{
+             top: 50px;
+             left: 50px;
+               position:absolute;
+               transform:translate(-50%-50%);
+               border-left:1000px;
+               left:500px;
+               color:red;
+
+        }
+           h1{
+           left:500px;
+               color:blue;
+
+           }
+
+
+    </style>
+</head>
+<body>
+<div class="data">
+<form  method= "POST">
+    {%csrf_token%}
+    {{form.as_p}}
+
+    <button type="submit">Submit Question</button>
+
+
+</form>
+</div>
+
+
+</body>
+</html>

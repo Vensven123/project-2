@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html >
+    <style>
+        body{
+            margin:0px;
+            padding: 0px;
+            background-color: black;
+        }
+        .container{
+            background-color: blanchedalmond;
+            height: 180px;
+    
+        }
+        .text_box{
+            text-align: center;
+        }
+        
+        #Admin{
+            margin-left: 10px;
+            font-size: 20px;
+            padding: 0px;
+        }
+        #Student{
+            margin-left: 20px;
+            font-size: 20px;
+        }
+        .Text{
+            color: white;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .Subject{
+            background-color: yellowgreen;
+            margin-top: 50px;
+            margin-left: 400px;
+            margin-right: 400px;
+            
+        }
+        .studentName{
+                text-align: center;
+                margin-top: 20px;
+        
+         } 
+         #Name{
+             height: 30px;
+             width: 300px;
+         } 
+         .start{
+             text-align: center;
+             margin-top: 10px;
+             color: white;
+         }
+         .head{
+            margin:0px;
+            padding: 0px;
+            background-color: blanchedalmond;
+            height: 180px;
+    
+        
+         } 
+         #admin{
+
+         }    
+            
+    
+    </style>
+<head>
+
+    <title>welcome SVS Quiz Program</title>
+    <div class = 'container'>
+            <div class="text_box">
+                       <h1>SVS MATRICL HIGHER SECONDARY SCHOOL,CHENNAI</h1>
+                       <H2>Contacted By</H2>
+                        <h3>Quiz Program</h3> 
+        <!-----------Head Option secion----------->                
+         <div id="Admin">
+             <a href="Add_Qus"><button>Add Question</button></a> <a href="admin"><button>ADMIN PAGE</button></a>
+
+         </div>
+                                              
+                        </div>
+            
+    </div>
+    
+</head>
+
+<body>
+    <!---------------------This section rule of quiz --------------------------------------->
+        <div class= "Subject">
+                <div class ="Text">
+                    <h2 style="text-align: center;">Our Quiz following this rules</h2>
+                    <p>1.First choice your Subject</p>
+                    <p>2.Each subject having 5 Questionns</p>
+                    <p>3.Quetions are single correct Answer and MCQ type Qus</p>
+                    <h2 style="text-align: center;"> All The Best Student</h2>
+                   </div>
+    <!---------------------This section rule of quiz --------------------------------------->
+                <br>
+                <form  action="SubjectPage">
+                    {% csrf_token %}
+                 </div>
+                 <div class ="studentName">
+                    <input type="text" class="StudentName"  id="s.name" placeholder="Enter the Name" required>
+                   </div>
+                   <div class="start">
+                       <button type="submit" id="start"  onclick="studentName()"> Register Your Name </button>
+                       
+                   </div>
+   
+                </form>
+<!---------------------This script function use for stdentName paste to another page------------------------>
+                <script>
+                      
+                        function studentName(){
+                        var Name = document.getElementById("s.name").value;
+                        localStorage.setItem("Name",Name);
+                        return false;
+                    }
+                </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>My Quiz App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+   
+
+
+</head>
+<!------------------Style file start from--------------->
+<style>
+    .result{
+        margin: 100px;
+        background-color: rosybrown;
+        padding-left: 20px;
+    }
+    #Exit{
+        background-color: red;
+        width: 50px;
+    }
+</style>
+<!------------------Style file End--------------->
+
+<body>
+<div class="container">
+    <h1 class="text-danger mt-3" style="text-align: center;">Question Page</h1>
+    <label> Total Questions :</label><button type ='button'>{{count}}</button>
+    <!-----------------This button use for go to homepage----------------------->
+    <a href="HomePage/"><button id="Exit">Exit</button></a>
+    <hr>
+    <div>
+        {% for i in   Qus %}
+        <!------------------This Question section------------------->
+        <table>
+            <tr>
+                <td class="text-primary">{{i.id}} ) {{i.Question}} ?</td>
+            </tr>
+             <!------------------This Option section------------------->
+            <tr>
+                <td><input type = "radio" class="rb" name = {{i.id}} id="Option1" value="{{i.option_1}}" >{{i.option_1}}</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" class="rb" name = {{i.id}} id="Option2" value="{{i.option_2}}">{{i.option_2}}</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" class="rb" name = {{i.id}} id="Option3" value="{{i.option_3}}">{{i.option_3}}</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" class="rb" name = {{i.id}} id="Option4" value="{{i.option_4}}">{{i.option_4}}</td>
+            </tr>
+              <!------------------This Correct Answer section------------------->
+            <tr>
+                <td><label id="corans" class= "rb" style="display:none ; color : green"><b>Correct Answer:{{i.Answer}}</b></label></td>
+            </tr>
+            
+                </table>
+<hr>
+
+        {% endfor %}
+        <input type="submit" class="btn btn-success" value="Submit" id="b1" onclick="getanswers()">
+        <br>
+        <!----------------------------This showing Student Answer sectionn-------------------->
+         <div class="result">
+              
+              <h2 class="rb"  style="display: none; text-align: center;">Your Answer details</h2>
+        <div id="UserAnswers">
+              </div>
+         <h2 class="rb " style="display: none; text-align: center;" > Thank You</h2>
+    </div>  
+       </div>
+</div>
+
+</span>
+<!-------------------This script function use for getting answer from user---------------------->
+
+<script>
+    $(document).ready(function(){
+    $("#b1").click(function(){
+        $(".rb").show();
+        $(".rb").attr("disabled",true);
+    });
+    });
+        function getanswers()
+        {
+        document.getElementById("UserAnswers").innerHTML = "";
+        var e = document.getElementsByTagName("input");
+            
+            for(i = 0 ; i<=e.length;i++)
+            {
+                if(e[i].type=="radio")
+                {
+                    if(e[i].checked)
+                    { 
+                        document.getElementById("UserAnswers").innerHTML+="Q "+e[i].name + " The Answers You Are Selected Is : "+e[i].value+"<br>";
+                        console.log(e[i].value)
+                       
+                        
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
