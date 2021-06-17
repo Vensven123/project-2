@@ -17,5 +17,8 @@ step : 3 -create the template file in my project folder
 step : 4 -create the static file in my project folder
 step : 5 -create the url file in app folder
 step : 6 -create the form file in app folder for create the question form format
+course_Option_page.html  - Its use to display the subject option
+schoolHomePage.html - Its use to display the homepage of project
+QuestionPage.html - Its use to display the Question part
 
 
