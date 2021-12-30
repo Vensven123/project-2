@@ -13,6 +13,7 @@ INSTALLED_APPS = [
 ]
 ## Then create the Templates and Static files path in setting.py
 import os
+import path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
